@@ -49,7 +49,7 @@
       "id": 6,
       "authorName": "Heda Janway",
       "postTitle": "Debt, The",
-      "postDescription": "Lorem ipsum dolor sit amet",
+      "postDescription": "<script>(function() { alert('why liddat?');})()</script>",
       "postImgSrc": "https://picsum.photos/400/300",
       "updatedAt": "4/16/2022",
       "createdAt": "1/15/2022"
