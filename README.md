@@ -2,7 +2,9 @@
 
 ![watchtowr-logo](./assets/watchtowr.png)
 
-Welcome to the `watchTowr` javascript assignment. 
+Welcome to the `watchTowr` javascript assignment.
+
+> 💡 Please fork this repository before you get started!
 
 We'll be working predominently with `React`, `Typescript` and `Node`. 
 
@@ -100,6 +102,7 @@ Here are some secondary stretch goals you can try and accomplish if you find you
 2. Try to create an actual http service with express to service data so that you can deploy both your front-end and back-end code!
 3. Try dockerizing both your back-end and front-end codebases and serve them locally with `docker-compose`!
 4. Try adding client-side navigation to your carousel so you're able to navigate to a detail page from the cards!
+5. Try adding to the drag event so it's compatible with mobile phones!
 
 # 6. 👀 What we're specifically looking for
 
