@@ -1,4 +1,4 @@
-# 1. `watchTowr` javascript assignment
+# 1. 🖥️ `watchTowr` javascript assignment
 
 ![watchtowr-logo](./assets/watchtowr.png)
 
@@ -8,16 +8,16 @@ We'll be working predominently with `React`, `Typescript` and `Node`.
 
 There are two sections to this assignment, the first being the expected must have requirements to be completed and the secondary good to have stretch goals that you're free to attempt if you have additional time. It's not expected you complete all the stretch goals of this assignment, but you're expected to complete at the primary requirements. 
 
-# 2. Table of Contents
+# 2. 📖 Table of Contents
 
-- [1. `watchTowr` javascript assignment](#1-watchtowr-javascript-assignment)
-- [2. Table of Contents](#2-table-of-contents)
+- [1. 🖥️ `watchTowr` javascript assignment](#1-️-watchtowr-javascript-assignment)
+- [2. 📖 Table of Contents](#2--table-of-contents)
 - [3. 🚀 How to get started](#3--how-to-get-started)
 - [4. 🥅 Primary Goals](#4--primary-goals)
   - [4.1. Front-end React Task (1)](#41-front-end-react-task-1)
   - [4.2. Front-end React Task (2)](#42-front-end-react-task-2)
-- [5. Secondary Goals](#5-secondary-goals)
-- [6. What we're specifically looking for](#6-what-were-specifically-looking-for)
+- [5. 🎯 Secondary Goals](#5--secondary-goals)
+- [6. 👀 What we're specifically looking for](#6--what-were-specifically-looking-for)
 
 # 3. 🚀 How to get started 
 
@@ -50,7 +50,7 @@ Feel free to use these acceptance criterias as your test suite cases!
 
 **Pre start instructions:**
 
-1. Please checkout a branch from `main` with the name `feat/task-1`.
+1. Please checkout a branch from `dev` with the name `feat/task-1`.
 2. `feat/task-1` should be the working environment of your implementation. 
 3. Use the `package.json` script `yarn start:task1` to initialize the project.
 4. Happy hacking!
@@ -58,7 +58,7 @@ Feel free to use these acceptance criterias as your test suite cases!
 **Expected delivery instructions:**
 
 1. We expect the code to be committed into a branch called `feat/task-1`
-2. There should be a pull request called `feat: TASK-1 carousel component` to merge `feat/task-1` into `main`.
+2. There should be a pull request called `feat: TASK-1 carousel component` to merge `feat/task-1` into `dev`.
 3. Feel free to merge the branch from `feat/task-1` into main after you've completed the requirements.
 
 ## 4.2. Front-end React Task (2)
@@ -81,7 +81,7 @@ Your acceptance criteria is as follows:
 
 **Pre start instructions:**
 
-1. Please checkout a branch from `main` with the name `feat/task-2`.
+1. Please checkout a branch from `dev` with the name `feat/task-2`.
 2. `feat/task-2` should be the working environment of your implementation. 
 3. Use the `package.json` script `yarn start:task2` to initialize the project.
 4. Happy hacking!
@@ -89,10 +89,10 @@ Your acceptance criteria is as follows:
 **Expected delivery instructions:**
 
 1. Similarly to task 1, there should be a branch called `feat/task-2`
-2. There should be a pull request called `feat: TASK-2 server data for carousel component` to merge `feat/task-2` into `main`.
+2. There should be a pull request called `feat: TASK-2 server data for carousel component` to merge `feat/task-2` into `dev`.
 3. Feel free to merge the branch from `feat/task-2` into main after you've completed the requirements.
 
-# 5. Secondary Goals
+# 5. 🎯 Secondary Goals
 
 Here are some secondary stretch goals you can try and accomplish if you find yourself itching for more!
 
@@ -101,7 +101,7 @@ Here are some secondary stretch goals you can try and accomplish if you find you
 3. Try dockerizing both your back-end and front-end codebases and serve them locally with `docker-compose`!
 4. Try adding client-side navigation to your carousel so you're able to navigate to a detail page from the cards!
 
-# 6. What we're specifically looking for
+# 6. 👀 What we're specifically looking for
 
 1. Thought process of code, the best way to showcase this is via commits
 2. Structure of components and props passing, what are some ways you can structure your components so it doesn't break the single responsibility principle.
