@@ -1,19 +1,18 @@
-import { Box, Center, IconButton, Button } from "@chakra-ui/react";
+import { Box, Center, IconButton, Button, Icon } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 
 export function LeftButton({ click }: { click: any }) {
   return (
     <Center>
-      <Box>
-        <IconButton
-          colorScheme="gray"
-          variant="unstyled"
-          aria-label="scroll left"
-          color="white"
-          icon={<ChevronLeftIcon />}
-          _hover={{ color: "grey" }}
-          onClick={click}
-        />
+      <Box
+        as="button"
+        onClick={click}
+        _hover={{ color: "grey" }}
+        color="white"
+        h={"100%"}
+        fontSize="2xl"
+      >
+        <ChevronLeftIcon />
       </Box>
     </Center>
   );
@@ -22,22 +21,21 @@ export function LeftButton({ click }: { click: any }) {
 export function RightButton({ click }: { click: any }) {
   return (
     <Center>
-      <Box>
-        <IconButton
-          colorScheme="gray"
-          variant="unstyled"
-          aria-label="scroll right"
-          color="white"
-          icon={<ChevronRightIcon />}
-          _hover={{ color: "grey" }}
-          onClick={click}
-        />
+      <Box
+        as="button"
+        onClick={click}
+        _hover={{ color: "grey" }}
+        color="white"
+        h={"100%"}
+        fontSize="2xl"
+      >
+        <ChevronRightIcon />
       </Box>
     </Center>
   );
 }
 
-export function PageButton({ click }: { click: any }) {
+export function PageButton({ click, fill }: { click: any; fill: string }) {
   return (
     <Center>
       <Box boxSize="5">
@@ -46,7 +44,7 @@ export function PageButton({ click }: { click: any }) {
           colorScheme="gray"
           variant="unstyled"
           aria-label="scroll"
-          color="gray"
+          color={fill}
           _hover={{ color: "pink.500" }}
           onClick={click}
         >

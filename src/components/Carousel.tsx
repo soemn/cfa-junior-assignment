@@ -39,7 +39,7 @@ export function Carousel({ slides }: { slides: any }) {
         display="flex"
         justifyContent="center"
         templateColumns="repeat(5,1fr)"
-        gap={6}
+        gap={1}
       >
         <LeftButton click={previousPage} />
         {allSlides.map((slide: any, i: number) => {
@@ -64,7 +64,13 @@ export function Carousel({ slides }: { slides: any }) {
           const changePage = () => {
             setPage(item);
           };
-          return <PageButton key={index} click={changePage} />;
+          return (
+            <PageButton
+              key={index}
+              fill={item === page ? "pink.500" : "gray"}
+              click={changePage}
+            />
+          );
         })}
       </Grid>
     </Section>
