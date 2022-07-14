@@ -5,6 +5,7 @@ import { useData } from "./hooks/useData";
 import { Center, Container, Heading, Image, Text } from "@chakra-ui/react";
 import { CodePanel } from "./components/Code";
 import { Section } from "./components/Section";
+import { CarouselData } from "./components/CarouselData";
 
 function App() {
   const data = useData<Article[]>(getArticles);
@@ -15,7 +16,8 @@ function App() {
           <Image src="watchtowr.png" />
         </Center>
       </Container>
-      <Carousel />
+      <Carousel slides={CarouselData} />
+
       <Section>
         <Heading>Data</Heading>
         {data ? (

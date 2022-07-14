@@ -8,6 +8,7 @@ interface ImageInformation {
   ImageAlt: string;
   Header: string;
   Description: string;
+  Comments: number;
 }
 
 export function Card(props: ImageInformation) {
@@ -30,6 +31,7 @@ export function Card(props: ImageInformation) {
           <Center gap="1">
             <Text fontSize={"xs"}>Admin</Text>
             <ChatIcon color={"gray"} />
+            <Text fontSize={"xs"}>{props.Comments}</Text>
           </Center>
         </Box>
       </Box>
