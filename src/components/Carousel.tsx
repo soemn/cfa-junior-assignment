@@ -40,17 +40,16 @@ export function Carousel({ slides }: { slides: any }) {
         <LeftButton click={previousPage} />
         {allSlides.map((slide: any, i: number) => {
           return (
-            <Box display={"flex"} justifyContent="center">
-              {i < page * 3 && i >= page * 3 - 3 && (
-                <Card
-                  ImageAlt="Image"
-                  ImageSrc={slide.image}
-                  Header={slide.heading}
-                  Description={slide.description}
-                  Comments={slide.comments}
-                />
-              )}
-            </Box>
+            i < page * 3 &&
+            i >= page * 3 - 3 && (
+              <Card
+                ImageAlt="Image"
+                ImageSrc={slide.image}
+                Header={slide.heading}
+                Description={slide.description}
+                Comments={slide.comments}
+              />
+            )
           );
         })}
         <RightButton click={nextPage} />
