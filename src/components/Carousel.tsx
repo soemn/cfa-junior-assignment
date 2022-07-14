@@ -10,6 +10,10 @@ export function Carousel({ slides }: { slides: any }) {
   const allSlides = [...slides];
   const length = allSlides.length;
   const numOfPages = Math.ceil(length / 3);
+  const pagesArray = [];
+  for (let i = 0; i < numOfPages; i++) {
+    pagesArray.push(i + 1);
+  }
 
   function nextPage() {
     setPage(page === numOfPages ? page : page + 1);
@@ -43,6 +47,7 @@ export function Carousel({ slides }: { slides: any }) {
             i < page * 3 &&
             i >= page * 3 - 3 && (
               <Card
+                key={i}
                 ImageAlt="Image"
                 ImageSrc={slide.image}
                 Header={slide.heading}
@@ -55,8 +60,12 @@ export function Carousel({ slides }: { slides: any }) {
         <RightButton click={nextPage} />
       </Grid>
       <Grid display="flex" justifyContent="center">
-        <PageButton />
-        <PageButton />
+        {pagesArray.map((item: number, index: number) => {
+          const changePage = () => {
+            setPage(item);
+          };
+          return <PageButton key={index} click={changePage} />;
+        })}
       </Grid>
     </Section>
   );

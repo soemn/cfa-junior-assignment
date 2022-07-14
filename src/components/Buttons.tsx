@@ -37,7 +37,7 @@ export function RightButton({ click }: { click: any }) {
   );
 }
 
-export function PageButton() {
+export function PageButton({ click }: { click: any }) {
   return (
     <Center>
       <Box boxSize="5">
@@ -48,6 +48,7 @@ export function PageButton() {
           aria-label="scroll"
           color="gray"
           _hover={{ color: "pink.500" }}
+          onClick={click}
         >
           ●
         </Button>
