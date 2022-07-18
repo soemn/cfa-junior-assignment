@@ -44,11 +44,11 @@ export function Carousel({ slides }: { slides: any }) {
             return (
               <Card
                 key={i}
-                ImageAlt="Image"
-                ImageSrc={slide.image}
-                Header={slide.heading}
-                Description={slide.description}
-                Comments={slide.comments}
+                ImageAlt={slide.postTitle}
+                ImageSrc={slide.postImgSrc}
+                Header={slide.postTitle}
+                Description={slide.postDescription}
+                // Comments={slide.comments}
               />
             );
           })}

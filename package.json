@@ -1,6 +1,7 @@
 {
   "name": "core-cfa-junior-assignment",
   "version": "0.1.0",
+  "proxy": "http://localhost:3004/",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.4",
@@ -14,6 +15,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "axios": "^0.27.2",
     "chakra-ui-carousel": "^0.3.7",
     "framer-motion": "^6.4.2",
     "json-server": "^0.17.0",

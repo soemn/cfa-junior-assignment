@@ -3,12 +3,11 @@ import type { Article } from "./gateways/articles.dto";
 import { Carousel } from "./components/Carousel";
 import { useData } from "./hooks/useData";
 import { Center, Container, Heading, Image, Text, Box } from "@chakra-ui/react";
-import { CodePanel } from "./components/Code";
-
-import { CarouselData } from "./components/CarouselData";
+// import { CodePanel } from "./components/Code";
 
 function App() {
   const data = useData<Article[]>(getArticles);
+
   return (
     <>
       <Container>
@@ -16,12 +15,11 @@ function App() {
           <Image src="watchtowr.png" />
         </Center>
       </Container>
-      <Carousel slides={CarouselData} />
 
       <Box>
         <Heading>Data</Heading>
         {data ? (
-          <CodePanel>{JSON.stringify(data, null, 2)}</CodePanel>
+          <Carousel slides={data} />
         ) : (
           <Text>This should be null if you're on task 1!</Text>
         )}
