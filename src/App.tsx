@@ -17,7 +17,6 @@ function App() {
       </Container>
 
       <Box>
-        <Heading>Data</Heading>
         {data ? (
           <Carousel slides={data} />
         ) : (

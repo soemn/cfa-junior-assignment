@@ -30,13 +30,15 @@ export function Carousel({ slides }: { slides: any }) {
     return null;
   }
 
+  let final = range === 0 ? -0.5 : range * -34.5;
+  console.log(final);
   let divStyle = {
-    transform: `translateX(${range * -33.33}%)`,
+    transform: `translateX(${final}%)`,
   };
 
   return (
     <div className="full">
-      <Header content={"Carousel"} />
+      <Header content={"Carousel with Data"} />
       <div className="container">
         <LeftButton click={previousPage} />
         <div className="slider" style={divStyle}>
