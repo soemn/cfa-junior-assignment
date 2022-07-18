@@ -2,6 +2,7 @@ import { Box, Image, Text, Spacer, Center } from "@chakra-ui/react";
 import DateBox from "./DateBox";
 import { ReadMoreButton } from "./Buttons";
 import { ChatIcon } from "@chakra-ui/icons";
+import "../index.css";
 
 interface ImageInformation {
   ImageSrc: string;
@@ -13,7 +14,7 @@ interface ImageInformation {
 
 export function Card(props: ImageInformation) {
   return (
-    <Box maxW="lg" overflow="hidden" borderRadius="md" boxShadow="xs">
+    <Box borderRadius="sm" boxShadow="xs" className="section">
       <Box pos="relative">
         <Image objectFit="cover" src={props.ImageSrc} alt={props.ImageAlt} />
         <DateBox Day="26" Month="Nov" Year="2019"></DateBox>

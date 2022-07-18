@@ -1,10 +1,12 @@
-import { Box, Center, IconButton, Button, Icon } from "@chakra-ui/react";
+import { Box, Center, Button } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
+import "../index.css";
 
 export function LeftButton({ click }: { click: any }) {
   return (
     <Center>
       <Box
+        className="handle"
         as="button"
         onClick={click}
         _hover={{ color: "grey" }}
@@ -22,6 +24,7 @@ export function RightButton({ click }: { click: any }) {
   return (
     <Center>
       <Box
+        className="handle"
         as="button"
         onClick={click}
         _hover={{ color: "grey" }}

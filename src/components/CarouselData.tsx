@@ -47,4 +47,20 @@ export const CarouselData = [
       "Far far away , behind the mountains, far from the countries Volkalia and Consonantia, there lived the blind tests",
     comments: 3,
   },
+  {
+    image:
+      "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    heading: "Finance and Legal Streams Throughout ",
+    description:
+      "Far far away , behind the mountains, far from the countries Volkalia and Consonantia, there lived the blind tests",
+    comments: 3,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    heading: "Finance and Legal Streams Throughout ",
+    description:
+      "Far far away , behind the mountains, far from the countries Volkalia and Consonantia, there lived the blind tests",
+    comments: 3,
+  },
 ];

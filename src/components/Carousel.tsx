@@ -1,51 +1,47 @@
-import { Heading, Grid, Box, Divider } from "@chakra-ui/react";
-import { Section } from "./Section";
+import { Grid } from "@chakra-ui/react";
 import { Card } from "./Card";
+import Header from "./Header";
 import { LeftButton, PageButton, RightButton } from "./Buttons";
-import React, { useState } from "react";
-// import { CarouselData } from "./CarouselData";
+import { useState } from "react";
+import "../index.css";
 
 export function Carousel({ slides }: { slides: any }) {
-  const [page, setPage] = useState(1);
+  const [range, setRange] = useState(0);
+  // const [style, setStyle] = useState({});
   const allSlides = [...slides];
   const length = allSlides.length;
+  console.log(length);
   const numOfPages = Math.ceil(length / 3);
   const pagesArray = [];
   for (let i = 0; i < numOfPages; i++) {
-    pagesArray.push(i + 1);
+    pagesArray.push(i);
   }
 
   function nextPage() {
-    setPage(page === numOfPages ? page : page + 1);
+    //prevents movements once the item is on the last page
+    setRange(range === length - 3 ? range : range + 1);
   }
 
   function previousPage() {
-    setPage(page === 1 ? page : page - 1);
+    setRange(range === 0 ? range : range - 1);
   }
 
   if (!Array.isArray(allSlides) || length <= 0) {
     return null;
   }
 
+  let divStyle = {
+    transform: `translateX(${range * -33.33}%)`,
+  };
+
   return (
-    <Section>
-      <Box mb={6}>
-        <Heading mb={6} textAlign={"center"}>
-          Carousel
-        </Heading>
-        <Divider orientation="horizontal" />
-      </Box>
-      <Grid
-        display="flex"
-        justifyContent="center"
-        templateColumns="repeat(5,1fr)"
-        gap={1}
-      >
+    <div className="full">
+      <Header content={"Carousel"} />
+      <div className="container">
         <LeftButton click={previousPage} />
-        {allSlides.map((slide: any, i: number) => {
-          return (
-            i < page * 3 &&
-            i >= page * 3 - 3 && (
+        <div className="slider" style={divStyle}>
+          {allSlides.map((slide: any, i: number) => {
+            return (
               <Card
                 key={i}
                 ImageAlt="Image"
@@ -54,25 +50,27 @@ export function Carousel({ slides }: { slides: any }) {
                 Description={slide.description}
                 Comments={slide.comments}
               />
-            )
-          );
-        })}
+            );
+          })}
+        </div>
         <RightButton click={nextPage} />
-      </Grid>
+      </div>
+
       <Grid display="flex" justifyContent="center">
         {pagesArray.map((item: number, index: number) => {
-          const changePage = () => {
-            setPage(item);
+          const changeRange = () => {
+            setRange(item === numOfPages - 1 ? length - 3 : item + item * 2);
           };
+
           return (
             <PageButton
               key={index}
-              fill={item === page ? "pink.500" : "gray"}
-              click={changePage}
+              fill={item === range ? "pink.500" : "gray"}
+              click={changeRange}
             />
           );
         })}
       </Grid>
-    </Section>
+    </div>
   );
 }
