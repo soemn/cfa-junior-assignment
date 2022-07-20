@@ -2,7 +2,7 @@ import { getArticles } from "./gateways/articlesAdapter";
 import type { Article } from "./gateways/articles.dto";
 import { Carousel } from "./components/Carousel";
 import { useData } from "./hooks/useData";
-import { Center, Container, Heading, Image, Text, Box } from "@chakra-ui/react";
+import { Center, Container, Image, Text, Box } from "@chakra-ui/react";
 // import { CodePanel } from "./components/Code";
 
 function App() {
