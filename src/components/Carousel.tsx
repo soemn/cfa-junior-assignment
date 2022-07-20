@@ -1,21 +1,14 @@
-import { Grid } from "@chakra-ui/react";
-import { Card } from "./Card";
 import Header from "./Header";
-import { LeftButton, PageButton, RightButton } from "./Buttons";
+import { LeftButton, RightButton } from "./Buttons";
 import { useState } from "react";
+import { PageButtonGroup } from "./PageButtonGroup";
+import { Slider } from "./Slider";
 import "../index.css";
 
 export function Carousel({ slides }: { slides: any }) {
   const [range, setRange] = useState(0);
-  // const [style, setStyle] = useState({});
   const allSlides = [...slides];
   const length = allSlides.length;
-  console.log(length);
-  const numOfPages = Math.ceil(length / 3);
-  const pagesArray = [];
-  for (let i = 0; i < numOfPages; i++) {
-    pagesArray.push(i);
-  }
 
   function nextPage() {
     //prevents movements once the item is on the last page
@@ -31,7 +24,7 @@ export function Carousel({ slides }: { slides: any }) {
   }
 
   let divStyle = {
-    transform: `translateX(${range * -33.33}%)`,
+    transform: `translateX(${range * -35.5}%)`,
   };
 
   return (
@@ -39,38 +32,11 @@ export function Carousel({ slides }: { slides: any }) {
       <Header content={"Carousel"} />
       <div className="container">
         <LeftButton click={previousPage} />
-        <div className="slider" style={divStyle}>
-          {allSlides.map((slide: any, i: number) => {
-            return (
-              <Card
-                key={i}
-                ImageAlt="Image"
-                ImageSrc={slide.image}
-                Header={slide.heading}
-                Description={slide.description}
-                Comments={slide.comments}
-              />
-            );
-          })}
-        </div>
+        <Slider style={divStyle} slides={slides} />
         <RightButton click={nextPage} />
       </div>
 
-      <Grid display="flex" justifyContent="center">
-        {pagesArray.map((item: number, index: number) => {
-          const changeRange = () => {
-            setRange(item === numOfPages - 1 ? length - 3 : item + item * 2);
-          };
-
-          return (
-            <PageButton
-              key={index}
-              fill={item === range ? "pink.500" : "gray"}
-              click={changeRange}
-            />
-          );
-        })}
-      </Grid>
+      <PageButtonGroup range={range} setRange={setRange} slides={slides} />
     </div>
   );
 }

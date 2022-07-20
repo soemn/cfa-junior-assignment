@@ -20,30 +20,38 @@ code {
 
 :root {
   --button-space: 2rem;
-  --card-size: 33.333 %;
+  --card-size: 33.3333%;
 }
 
 .container {
   width: 100%;
   display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 
 .slider {
   display: flex;
   width: calc(100% - 2 * var(--button-space));
-  transform: translateX(calc((0 * -33.33%)));
-  transition: transform 250ms ease-in-out;
+  /* transform: translateX(-0.5%) ; */
+  transition: transform 300ms ease-in-out;
 }
 
 .section {
   max-width: var(--card-size);
   width: var(--card-size);
-  flex: 0 0 33.333%;
+  flex: 0 0 33.333333%;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .handle {
   width: var(--button-space);
   z-index: 10;
   background-color: white;
+}
+
+.full {
+  width: 90%;
+  margin: auto;
 }
