@@ -24,7 +24,7 @@ export function Carousel({ slides }: { slides: any }) {
   }
 
   let divStyle = {
-    transform: `translateX(${range * -35.5}%)`,
+    transform: `translateX(calc(-${range} * (33.333% + 20px)))`,
   };
 
   return (
