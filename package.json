@@ -1,7 +1,7 @@
 {
   "name": "core-cfa-junior-assignment",
   "version": "0.1.0",
-  "proxy": "http://localhost:3004/",
+  "proxy": "http://localhost:5000/",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.4",
