@@ -33,7 +33,7 @@ code {
 .slider {
   display: flex;
   width: calc(100% - 2 * var(--button-space));
-  /* transform: translateX(-0.5%) ; */
+  /* transform: translateX(calc(- (33.333% + 20px))); */
   transition: transform 300ms ease-in-out;
 }
 
