@@ -1,4 +1,4 @@
-import { Box, Center, Button } from "@chakra-ui/react";
+import { Box, Center, Button, IconButton } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import "../index.css";
 
@@ -38,46 +38,26 @@ export function RightButton({ click }: { click: any }) {
   );
 }
 
-export function PageButton({
-  setRange,
-  fill,
-  id,
-  slides,
-}: {
-  slides: any;
-  setRange: any;
-  fill: string;
-  id: string;
-}) {
-  const allSlides = [...slides];
-  const length = allSlides.length;
-  const numOfPages = Math.ceil(length / 3);
-
-  const changeRange = (event: React.MouseEvent<HTMLElement>) => {
-    const buttonId = Number(event.currentTarget.id);
-
-    setRange(
-      buttonId === numOfPages - 1 ? length - 3 : buttonId + buttonId * 2
-    );
-  };
-
+export function PageLeftButton({ click }: { click: any }) {
   return (
-    <Center>
-      <Box boxSize="5">
-        <Button
-          id={id}
-          fontSize="lg"
-          colorScheme="gray"
-          variant="unstyled"
-          aria-label="scroll"
-          color={fill}
-          _hover={{ color: "pink.500" }}
-          onClick={changeRange}
-        >
-          ●
-        </Button>
-      </Box>
-    </Center>
+    <IconButton
+      variant={"unstyled"}
+      aria-label="Add to friends"
+      icon={<ChevronLeftIcon />}
+      size={"md"}
+      onClick={click}
+    />
+  );
+}
+export function PageRightButton({ click }: { click: any }) {
+  return (
+    <IconButton
+      variant={"unstyled"}
+      aria-label="Add to friends"
+      icon={<ChevronRightIcon />}
+      size={"md"}
+      onClick={click}
+    />
   );
 }
 

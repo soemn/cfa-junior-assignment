@@ -6,7 +6,6 @@ import { useData } from "./hooks/useData";
 import { Center, Container, Image, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import WaitingMessage from "./components/WaitingMessage";
-// import { CodePanel } from "./components/Code";
 
 function App() {
   const data = useData<Article[]>(getArticles);

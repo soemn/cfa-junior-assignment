@@ -10,12 +10,12 @@ export function Carousel({ slides }: { slides: any }) {
   const allSlides = [...slides];
   const length = allSlides.length;
 
-  function nextPage() {
+  function nextItem() {
     //prevents movements once the item is on the last page
     setRange(range === length - 3 ? range : range + 1);
   }
 
-  function previousPage() {
+  function previousItem() {
     setRange(range === 0 ? range : range - 1);
   }
 
@@ -31,9 +31,9 @@ export function Carousel({ slides }: { slides: any }) {
     <div className="full">
       <Header content={"Carousel with Data"} />
       <div className="container">
-        <LeftButton click={previousPage} />
+        <LeftButton click={previousItem} />
         <Slider style={divStyle} slides={slides} />
-        <RightButton click={nextPage} />
+        <RightButton click={nextItem} />
       </div>
 
       <PageButtonGroup range={range} setRange={setRange} slides={slides} />
