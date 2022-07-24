@@ -39,7 +39,6 @@ export function Carousel({
     setIndex(index <= 0 ? index : index - 1);
     const newPosition = (index - 1) % 3;
     if (index - 1 === length - 4 || newPosition === 2) {
-      console.log("minus one page");
       setPage(page - 1);
     }
     changeRange({
