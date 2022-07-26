@@ -2,7 +2,13 @@ import { Box, Center, Button, IconButton } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import "../index.css";
 
-export function LeftButton({ click }: { click: any }) {
+export function LeftRightButton({
+  click,
+  isLeft,
+}: {
+  click: any;
+  isLeft: Boolean;
+}) {
   return (
     <Center>
       <Box
@@ -14,48 +20,24 @@ export function LeftButton({ click }: { click: any }) {
         h={"100%"}
         fontSize="2xl"
       >
-        <ChevronLeftIcon />
+        {isLeft === true ? <ChevronLeftIcon /> : <ChevronRightIcon />}
       </Box>
     </Center>
   );
 }
 
-export function RightButton({ click }: { click: any }) {
-  return (
-    <Center>
-      <Box
-        className="handle"
-        as="button"
-        onClick={click}
-        _hover={{ color: "grey" }}
-        color="white"
-        h={"100%"}
-        fontSize="2xl"
-      >
-        <ChevronRightIcon />
-      </Box>
-    </Center>
-  );
-}
-
-export function PageLeftButton({ click }: { click: any }) {
+export function PageLeftRightButton({
+  click,
+  isLeft,
+}: {
+  click: any;
+  isLeft: Boolean;
+}) {
   return (
     <IconButton
       variant={"unstyled"}
-      aria-label="Reduce by one page"
-      icon={<ChevronLeftIcon />}
-      _hover={{ bg: "gray.100" }}
-      size={"md"}
-      onClick={click}
-    />
-  );
-}
-export function PageRightButton({ click }: { click: any }) {
-  return (
-    <IconButton
-      variant={"unstyled"}
-      aria-label="Add one page"
-      icon={<ChevronRightIcon />}
+      aria-label="Move by one page"
+      icon={isLeft === true ? <ChevronLeftIcon /> : <ChevronRightIcon />}
       _hover={{ bg: "gray.100" }}
       size={"md"}
       onClick={click}

@@ -1,5 +1,5 @@
 import { Flex, Input, ButtonGroup, Center, Text } from "@chakra-ui/react";
-import { PageLeftButton, PageRightButton } from "./Buttons";
+import { PageLeftRightButton } from "./Buttons";
 import "../index.css";
 
 export function PageButtonGroup({
@@ -64,7 +64,7 @@ export function PageButtonGroup({
             Page {page} of {numOfPages}
           </Text>
 
-          <PageLeftButton click={leftPage} />
+          <PageLeftRightButton click={leftPage} isLeft={true} />
           <Input
             textAlign={"center"}
             htmlSize={1}
@@ -74,7 +74,7 @@ export function PageButtonGroup({
             value={page}
             onChange={changePage}
           />
-          <PageRightButton click={rightPage} />
+          <PageLeftRightButton click={rightPage} isLeft={false} />
         </Center>
       </ButtonGroup>
     </Flex>

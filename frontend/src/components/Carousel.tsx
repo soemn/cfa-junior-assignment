@@ -1,5 +1,5 @@
 import Header from "./Header";
-import { LeftButton, RightButton } from "./Buttons";
+import { LeftRightButton } from "./Buttons";
 import { useState } from "react";
 import { PageButtonGroup } from "./PageButtonGroup";
 import { Slider } from "./Slider";
@@ -55,9 +55,9 @@ export function Carousel({
     <div className="full">
       <Header content={"Carousel with Data"} />
       <div className="container">
-        <LeftButton click={previousItem} />
+        <LeftRightButton click={previousItem} isLeft={true} />
         <Slider style={divStyle} slides={slides} />
-        <RightButton click={nextItem} />
+        <LeftRightButton click={nextItem} isLeft={false} />
       </div>
 
       <PageButtonGroup
