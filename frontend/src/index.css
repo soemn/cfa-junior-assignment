@@ -33,8 +33,8 @@ code {
 .slider {
   display: flex;
   width: calc(100% - 2 * var(--button-space));
-  /* transform: translateX(calc(-3 * (33.333% + 20px))); */
-  transition: transform 350ms ease-in-out;
+  /* transform: translateX(calc(- (33.333% + 20px))); */
+  transition: transform 300ms ease-in-out;
 }
 
 .section {
