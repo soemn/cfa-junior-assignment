@@ -1,10 +1,16 @@
 import { Card } from "./Card";
+import type { Article } from "../gateways/articles.dto";
 import { Box } from "@chakra-ui/react";
 import "../index.css";
 
-export function Slider({ slides, style }: { slides: any; style: any }) {
-  const slidesSection = [...slides.posts];
-  const length = slides.total;
+interface SliderProps {
+  slides: Article;
+  style: { transform: string };
+}
+
+export const Slider: React.FC<SliderProps> = (props) => {
+  const slidesSection = [...props.slides.posts];
+  const length = props.slides.total;
 
   if (!Array.isArray(slidesSection) || length <= 0) {
     return null;
@@ -18,7 +24,7 @@ export function Slider({ slides, style }: { slides: any; style: any }) {
   });
 
   return (
-    <div className="slider" style={style}>
+    <div className="slider" style={props.style}>
       {allSlides.map((slide: any, i: number) => {
         return slide === "" ? (
           <Box className="section" key={i} />
@@ -34,4 +40,4 @@ export function Slider({ slides, style }: { slides: any; style: any }) {
       })}
     </div>
   );
-}
+};

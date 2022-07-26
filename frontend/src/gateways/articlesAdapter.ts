@@ -8,7 +8,7 @@ export async function getArticles({
 }: {
   upperlimit: number;
   lowerlimit: number;
-}): Promise<Article[]> {
+}): Promise<Article> {
   console.log(upperlimit, lowerlimit);
   const response = await fetch(
     `${ARTCILES_URL}?upperlimit=${upperlimit}&lowerlimit=${lowerlimit}`

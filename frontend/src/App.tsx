@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { getArticles } from "./gateways/articlesAdapter";
 import type { Article } from "./gateways/articles.dto";
 import { Carousel } from "./components/Carousel";
@@ -6,13 +6,13 @@ import { useData } from "./hooks/useData";
 import { Center, Container, Image, Box } from "@chakra-ui/react";
 import WaitingMessage from "./components/WaitingMessage";
 
-function App() {
+const App: React.FunctionComponent = () => {
   const [range, setRange] = useState({
     upperlimit: 20,
     lowerlimit: 0,
   });
 
-  const data = useData<Article[]>(range, () => getArticles(range));
+  const data = useData<Article>(range, () => getArticles(range));
   //changes the range of the data that is retrieved
   const changeRange = ({ lower, upper }: { lower: number; upper: number }) => {
     setRange({
@@ -38,6 +38,6 @@ function App() {
       </Box>
     </>
   );
-}
+};
 
 export default App;

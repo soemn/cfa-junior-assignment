@@ -1,25 +1,25 @@
+import React, { useState } from "react";
 import Header from "./Header";
+import type { Article } from "../gateways/articles.dto";
 import { LeftRightButton } from "./Buttons";
-import { useState } from "react";
 import { PageButtonGroup } from "./PageButtonGroup";
 import { Slider } from "./Slider";
 import "../index.css";
 
-export function Carousel({
-  slides,
-  changeRange,
-}: {
-  slides: any;
-  changeRange: any;
-}) {
+interface CarouselProps {
+  slides: Article;
+  changeRange: ({ lower, upper }: { lower: number; upper: number }) => void;
+}
+
+export const Carousel: React.FC<CarouselProps> = (props) => {
   const [index, setIndex] = useState(0);
   const [page, setPage] = useState(1);
 
-  const length = slides.total;
+  const length = props.slides.total;
 
   // const numOfPages = Math.ceil(length / 3);
 
-  function nextItem() {
+  function nextItem(): void {
     //prevents movements once the item is within the last umbrella, if the last item is in the first position, prevent movement
     //flush left for last item for pages
     setIndex(index >= length - 3 ? index : index + 1);
@@ -29,19 +29,19 @@ export function Carousel({
       setPage(page + 1);
     }
 
-    changeRange({
+    props.changeRange({
       lower: index - 20 <= 0 ? 0 : index - 20,
       upper: index + 20 >= length ? length : index + 20,
     });
   }
 
-  function previousItem() {
+  function previousItem(): void {
     setIndex(index <= 0 ? index : index - 1);
     const newPosition = (index - 1) % 3;
     if (index - 1 === length - 4 || newPosition === 2) {
       setPage(page - 1);
     }
-    changeRange({
+    props.changeRange({
       lower: index - 20 <= 0 ? 0 : index - 20,
       upper: index + 20 >= length ? length : index + 20,
     });
@@ -56,7 +56,7 @@ export function Carousel({
       <Header content={"Carousel with Data"} />
       <div className="container">
         <LeftRightButton click={previousItem} isLeft={true} />
-        <Slider style={divStyle} slides={slides} />
+        <Slider style={divStyle} slides={props.slides} />
         <LeftRightButton click={nextItem} isLeft={false} />
       </div>
 
@@ -65,9 +65,9 @@ export function Carousel({
         setIndex={setIndex}
         page={page}
         setPage={setPage}
-        slides={slides}
-        changeRange={changeRange}
+        slides={props.slides}
+        changeRange={props.changeRange}
       />
     </div>
   );
-}
+};

@@ -1,12 +1,13 @@
+import React from "react";
 import { Box, Text } from "@chakra-ui/react";
 
-interface DateInformation {
+interface DateInformationProps {
   Day: string;
   Month: string;
   Year: string;
 }
 
-export default function DateBox(props: DateInformation) {
+const DateBox: React.FC<DateInformationProps> = (props) => {
   return (
     <Box
       pos="absolute"
@@ -24,4 +25,6 @@ export default function DateBox(props: DateInformation) {
       <Text fontSize="xs">{props.Year}</Text>
     </Box>
   );
-}
+};
+
+export default DateBox;

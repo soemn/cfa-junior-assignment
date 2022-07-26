@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Image, Text, Grid, GridItem } from "@chakra-ui/react";
 import DateBox from "./DateBox";
 import { ReadMoreButton } from "./Buttons";
@@ -11,7 +12,7 @@ interface ImageInformation {
   Description: string;
 }
 
-export function Card(props: ImageInformation) {
+export const Card: React.FC<ImageInformation> = (props) => {
   return (
     <Box borderRadius="sm" boxShadow="xs" className="section">
       <Grid templateRows={"1fr 150px auto"}>
@@ -52,4 +53,4 @@ export function Card(props: ImageInformation) {
       </Grid>
     </Box>
   );
-}
+};

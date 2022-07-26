@@ -1,6 +1,7 @@
+import React from "react";
 import { Center, Spinner, Text } from "@chakra-ui/react";
 
-export default function WaitingMessage() {
+const WaitingMessage: React.FC = () => {
   return (
     <Center display={"flex"} flexDirection={"column"}>
       <Text color={"pink.500"} marginBottom={"20px"} fontWeight={"bold"}>
@@ -15,4 +16,6 @@ export default function WaitingMessage() {
       />
     </Center>
   );
-}
+};
+
+export default WaitingMessage;
