@@ -9,7 +9,6 @@ interface ImageInformation {
   ImageAlt: string;
   Header: string;
   Description: string;
-  // Comments: number;
 }
 
 export function Card(props: ImageInformation) {

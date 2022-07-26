@@ -1,24 +1,34 @@
 import { Card } from "./Card";
+import { Box } from "@chakra-ui/react";
 import "../index.css";
 
 export function Slider({ slides, style }: { slides: any; style: any }) {
-  const allSlides = [...slides];
-  const length = allSlides.length;
+  const slidesSection = [...slides.posts];
+  const length = slides.total;
 
-  if (!Array.isArray(allSlides) || length <= 0) {
+  if (!Array.isArray(slidesSection) || length <= 0) {
     return null;
   }
+
+  const allSlides = new Array(length);
+  allSlides.fill("");
+  slidesSection.forEach((element) => {
+    const index = Number(element.id - 1);
+    allSlides[index] = element;
+  });
 
   return (
     <div className="slider" style={style}>
       {allSlides.map((slide: any, i: number) => {
-        return (
+        return slide === "" ? (
+          <Box className="section" key={i} />
+        ) : (
           <Card
             key={i}
-            ImageAlt="Image"
-            ImageSrc={slide.image}
-            Header={slide.heading}
-            Description={slide.description}
+            ImageAlt={slide.postTitle}
+            ImageSrc={slide.postImgSrc}
+            Header={slide.postTitle}
+            Description={slide.postDescription}
           />
         );
       })}
